@@ -1,0 +1,867 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Responsive Nav · Advanced Left Navigation Demo</title>
+    <meta ><link rel="stylesheet" href="styles.css"><!--<![endif]-->
+    <link rel="stylesheet" href="Font-Awesome-3.2.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="buttons.css">
+    <script src="headroom.js"></script>
+    <script type="text/javascript" src="jquery-2.1.4.min.js"></script>
+  </head>
+  <!--内部樣式表-->
+  <style>
+    .main{
+       background:url(22.jpg) right no-repeat;
+       background-color: white;
+       background-attachment: fixed;
+       position:absolute;
+        height: auto;
+        min-height: 1000px;
+        opacity: 1;
+      z-index: 2;
+    }
+  </style>
+  <!--动态头样式-->
+  <style>
+        .headroom {
+        position:fixed;
+        top:0px;
+        left: 5px;
+        opacity: 0.95;
+        right: 0px;
+        transition: transform 200ms linear;
+        display: block;
+        height: 70px;
+        width: auto;
+        background-color: #22252C;
+        z-index: 3;
+    }
+         .headroom #p2_ #p3_ #p4_{
+          height: 5px;
+         }
+   
+         .headroom #p2{
+          color: grey;
+          font-size: 18px;
+          font-family: 'SimHei', sans-serif;
+          position: relative;
+          left: 1104px;
+          top:25px;
+          cursor: pointer;
+    }
+         .headroom #p3{
+          color:grey;
+          font-size: 18px;
+          font-family: 'SimHei', sans-serif;
+          position: relative;
+          left: 1380px;
+          top:-71px;
+          cursor: pointer;
+    }
+         .headroom #p3 a {
+          text-decoration: none;
+          color:grey;
+    }
+         .headroom #p4{
+          color: grey;
+          font-size: 18px;
+          font-family: 'SimHei', sans-serif;
+          position: relative;
+          left: 1245px;
+          top:-23px;
+          cursor: pointer;
+    }
+         .headroom #p1:hover {
+          color:white;
+    }
+         .headroom #p2:hover {
+          color: white;
+    }
+         .headroom #p3:hover {
+          color: white;
+    }
+          .headroom #p3:hover a {
+          color: white;
+    }
+          .headroom #p4:hover {
+        color: white;     
+    }
+  
+           .headroom--pinned {
+              transform: translateY(0%);
+    }
+           .headroom--unpinned {
+              transform: translateY(-100%);
+              background-color: grey;
+    }
+           #div1{
+              height: 1000px;
+              background-color: #666666;
+    }
+           .icon-user{
+              position:relative;
+              font-size: 1.7em;
+              left:1060px;
+              top:-4px;
+              color: #02c8a7;
+              cursor:pointer;
+    }
+           .icon-off{
+              position:relative;
+              font-size: 1.5em;
+              left: 1345px;
+              top:-93px;
+              color: #02c8a7;
+              cursor: pointer;
+    }
+           .icon-pushpin{
+              position:relative;
+              font-size: 1.7em;
+              left:1207px;
+              top:-47px;
+              color:#02c8a7;  
+              cursor: pointer;
+    }
+  </style>
+  <!---->
+      <!--Send_window-->
+            <style>
+                    #hover_{
+                    position: fixed;
+                    top:750px;
+                    text-align: center;
+                    cursor: pointer;
+                    color: grey;    
+                  }
+                  #hover_:hover {
+                    color: #A9A9A9;
+                  }
+                  .icon-angle-up{
+                  color:black;
+                  position:fixed;
+                    font-size: 3em;
+                    left:700px;
+                    top:10px;
+                     z-index: 5;
+                  }
+                     .icon-eye-open{
+                  position:fixed;
+                    font-size: 4.4em;
+                    left:405px;
+                    top:692px;
+                    color: black;
+                     z-index: 5;
+                  }
+                    .button-primary{
+                      background-color:#4682B4;
+                      opacity: 1;
+
+
+                     }
+                  .icon-angle-down{
+                  position:fixed;
+                    font-size: 3em;
+                    left:700px;
+                    top:650px;
+                    color: black;
+                    cursor: pointer;
+                    z-index: 5;
+
+                  }
+                  #input_text{
+                    font-size: 20px;
+                    position: fixed;
+                    border-radius: 10px;
+                    left:495px;
+                    top:690px;
+                    height: 70px;
+                    width: 440px;
+                     z-index: 5;
+                  }
+                  #input_submit{
+                    position: fixed;
+                    top:692px;
+                    left:955px;
+                    color: white;
+                    font-size:25px;
+                    height: 70px;
+                    width: 150px;
+                   z-index: 5;
+                  }
+
+                  #window:hover #enter_{
+                    display:block;
+                  }
+
+
+                  #enter_{
+                    
+                    position: fixed;
+                    top: 700px;
+                    
+                    display: none;
+                     z-index: 5;
+
+                  }
+                  #enter_:hover .icon-eye-open{
+                    color : #02c8a7;
+                    opacity: 0.7;
+                  }
+
+                  .input_submit{
+                    font-color: white;
+                  }
+                    }
+                
+            </style>
+          
+      <!---->
+  <!---->
+  <!--message 样式-->
+<style>
+
+  .message{
+    width: 750px;
+    top:10px;
+    height:auto;
+    border-style: solid;
+    background-color: white;
+    border-color:black;
+    border-radius: 20px;
+    position: relative; 
+    border-width: 5px;
+    padding: 20px;
+    z-index: 4;
+  }
+  .continer{
+    position: relative;
+  }
+  .continer p {
+     font-size: 18px;
+     font-family: 'SimHei';
+     color: #414141;
+  }
+  .continer .p-_{
+    text-align: center;
+  }
+  .message_add{
+    position: absolute; 
+    right: 0px;
+      bottom: 38px;
+    z-index: 4;
+  }
+  .icon-heart-empty{
+    font-size: 1.5em;
+    position: absolute;
+    right:180px;
+    cursor: pointer;
+    display: block;
+
+  }
+  .icon-heart{
+    font-size: 1.5em;
+    position: absolute;
+    right:180px;
+    cursor: pointer;
+    display: none;
+  }
+  .icon-thumbs-up{
+    font-size: 1.5em;
+    position: absolute;
+    right:120px;
+    cursor: pointer;
+
+  }
+  .icon-envelope{
+    font-size: 1.5em;
+    position: absolute;
+    right:60px;
+    cursor: pointer;
+
+  }
+  .heart:hover .icon-heart{
+    display: block;
+  }
+  
+  .comment{
+    position: relative;
+
+
+  }
+  .top_line_1{
+    position: relative;
+      bottom:30px;
+  }
+  .top_line_2{
+    position: relative;
+      bottom:0px;
+  }
+  .icon-chevron-up{
+    position:relative;
+    left:368px;
+    top:-10px;
+    font-size: 1.3em;
+    cursor: pointer;
+  }
+  .comment_text{
+    position: relative;
+    bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-family: 'SimHei';
+  }
+
+    .icon-pencil{
+      position: relative;
+      left:368px;
+      bottom:10px;
+      cursor: pointer;
+    }
+
+  .hide{
+    display: none;
+  }
+
+  .comment_enter_{
+    font-size: 20px;
+    position: relative;
+    border-radius: 10px;
+    left:110px;
+    bottom: 10px;
+    height: 30px;
+    width: 440px;
+  }
+  #comment_submit{
+    position: relative;
+    bottom:18px;
+    left:110px;
+    color: white;
+    font-size:17px;
+    height: 30px;
+    width: 150px;
+    
+  }
+  .commentment_enter:hover .hide{
+    display: block;
+  }
+  .comment_enter:hover .icon-pencil{
+    display: none;
+  }
+
+</style>
+<style>
+ #nav ul{
+          position: fixed;
+          top:150px;
+          z-index: 1;
+    }
+  
+</style>
+
+<script type="text/javascript">
+$(function (){
+    var urlinfo=window.location.href; //获取当前页面的url
+      var len=urlinfo.length;//获取url的长度
+      var offset=urlinfo.indexOf("?");//设置参数字符串开始的位置
+      var newsidinfo=urlinfo.substr(offset+1,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串
+      var newsids=newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
+      var newsid=newsids[1];//得到参数值
+      var newsname=newsids[0];//得到参数名字
+      $.ajax({
+            'url':"/",
+            'data':{"type":"first_open"},
+            'success':function(data){
+                for(id in data){
+                  message_id = id;
+                  message = data[id];
+
+                   main_div =document.getElementById("mainbox");
+
+                div1=document.createElement("div");
+                div1.setAttribute("class",'continer');
+
+                mian = document.createElement("div");
+                mian.setAttribute("class","message");
+                mian.setAttribute("id",message_id);
+
+                txt = document.createTextNode(message);
+        para1 = document.createElement("p");
+        para1.appendChild(txt);
+                div1.appendChild(para1);
+                br_ =document.createElement("br");
+                 br__ =document.createElement("br");
+                div1.appendChild(br_);
+                 div1.appendChild(br__);
+
+
+
+
+        div2 = document.createElement("div");
+                div2.setAttribute("class","message_add");
+
+                  div3 = document.createElement("div");
+                  div3.setAttribute("class","heart");
+                  div3.setAttribute("onclick","not_empty(this)");
+                    span_ = document.createElement("span");
+                    span_.setAttribute("class","icon-heart-empty");
+                    span_1 = document.createElement("span");
+                    span_1.setAttribute("class","icon-heart");
+                  div3.appendChild(span_);
+                  div3.appendChild(span_1);
+                  span_2 = document.createElement("span");
+                  span_2.setAttribute("class","icon-thumbs-up");
+                  span_3 = document.createElement("span");
+                  span_3.setAttribute("class","icon-envelope");
+                  span_3.setAttribute("onclick","show_detail(this)");
+                  span_3.setAttribute("status","off");
+                br_= document.createElement("br");
+                div2.appendChild(div3);
+                div2.appendChild(span_2);
+                div2.appendChild(span_3);
+                txt1=document.createTextNode("-------------------------------------------------------------------------");
+                para2=document.createElement("p");
+                para2.appendChild(txt1);
+
+                div1.appendChild(div2);
+                div1.appendChild(para2);
+          mian.appendChild(div1)
+//                main_div.appendChild(mian);
+        main_div.insertBefore(br_,main_div.getElementsByTagName("div")[0]);
+                //main_div.appendChild(mian);
+        main_div.insertBefore(mian,main_div.getElementsByTagName("br")[0]);
+
+                }
+
+                
+            },
+            'type':"post",
+            'datatype':'josn',
+
+        });
+});
+</script> 
+
+
+
+
+
+<script>
+
+<!--message_function-->
+  function not_empty(whic){
+    temp_=whic.getElementsByTagName('span');
+    if(temp_[0].getAttribute("style") == "display:none"){
+      temp_[0].setAttribute("style","display:block");
+        temp_[1].setAttribute("style","display:none");
+     }
+    
+    else{
+    temp_[1].setAttribute("style","display:block");
+    temp_[0].setAttribute("style","display:none");
+  }
+  }
+
+    function show_detail(whic){
+    grand_pa = whic.parentNode.parentNode.parentNode;
+    message_id = whic.parentNode.parentNode.parentNode.id;
+    special_id = message_id +'_enter';
+    if(whic.getAttribute("status")=='off'){
+      whic.setAttribute("status","on");
+    
+     $.ajax({
+            'url':"/",
+            'data':{"type":"comment","message_id":message_id},
+            'success':function(data){
+              
+                
+                div_=document.createElement("div");
+    div_.setAttribute("class","comment");
+
+    
+
+    span_=document.createElement("span");
+    span_.setAttribute("class","icon-chevron-up");
+    div_.appendChild(span_);
+      
+      div___=document.createElement("div");
+
+    for(var i=0 ; data.comment[i] ;i++){
+      txt_=document.createTextNode(data.comment[i]);
+      p_=document.createElement("p");
+      p_.appendChild(txt_);
+      p_.setAttribute("class","comment_text");
+      div___.appendChild(p_);
+    }
+    div_.appendChild(div___);
+
+    
+
+    div_son = document.createElement("div");
+    div_son.setAttribute("class","comment_enter");
+    span_=document.createElement("span");
+    span_.setAttribute("class","icon-pencil");
+    div_son.appendChild(span_);
+
+    div_son_son = document.createElement("div");
+    div_son_son.setAttribute("class","hide");
+    
+      
+      text_ = document.createElement("textarea");
+      text_.setAttribute("class","comment_enter_");
+      text_.setAttribute("id",special_id);
+      
+      input_ =document.createElement("input");
+      input_.setAttribute("type","submit");
+      input_.setAttribute("class","button button-glow button-border button-rounded button-primary");
+      input_.setAttribute("value","Send");
+      input_.setAttribute("id","comment_submit");
+      input_.setAttribute("onclick","add_comment(this);return false");
+      
+      div_son_son.appendChild(text_);
+      div_son_son.appendChild(input_);
+    div_son.appendChild(div_son_son);
+    div_.appendChild(div_son);
+
+
+
+    grand_pa.appendChild(div_);
+
+                
+            },
+            'type':"post",
+            'datatype':'josn',
+
+        });
+
+
+    }
+
+   else{
+     x = grand_pa.getElementsByTagName("div");
+     grand_pa.removeChild(x[3]);
+     whic.setAttribute("status","off");
+   }
+
+
+
+
+  }
+
+
+
+<!---->
+<!--ajax 显示消息-->
+
+ function Send_message(){
+   $.ajax({
+            'url':"/",
+            'data':{"type":"send_message","message":$("#input_text").val()},
+            'success':function(data){
+                main_div =document.getElementById("mainbox");
+
+                div1=document.createElement("div");
+                div1.setAttribute("class",'continer');
+
+                mian = document.createElement("div");
+                mian.setAttribute("class","message");
+                mian.setAttribute("id",data.message_id);
+
+                txt = document.createTextNode(data.message);
+        para1 = document.createElement("p");
+        para1.appendChild(txt);
+                div1.appendChild(para1);
+              br_=document.createElement("br");
+              br__=document.createElement("br");
+              div1.appendChild(br_);
+              div1.appendChild(br__);
+
+        
+        div2 = document.createElement("div");
+                div2.setAttribute("class","message_add");
+
+                  div3 = document.createElement("div");
+                  div3.setAttribute("class","heart");
+                  div3.setAttribute("onclick","not_empty(this)");
+                    span_ = document.createElement("span");
+                    span_.setAttribute("class","icon-heart-empty");
+                    span_1 = document.createElement("span");
+                    span_1.setAttribute("class","icon-heart");
+                  div3.appendChild(span_);
+                  div3.appendChild(span_1);
+                  span_2 = document.createElement("span");
+                  span_2.setAttribute("class","icon-thumbs-up");
+                  span_3 = document.createElement("span");
+                  span_3.setAttribute("class","icon-envelope");
+                  span_3.setAttribute("onclick","show_detail(this)");
+                  span_3.setAttribute("status","off");
+                div2.appendChild(div3);
+                div2.appendChild(span_2);
+                div2.appendChild(span_3);
+                txt1=document.createTextNode("-------------------------------------------------------------------------");
+                para2=document.createElement("p");
+                para2.appendChild(txt1);
+                para2.setAttribute("class","p-_");
+
+                div1.appendChild(div2);
+                div1.appendChild(para2);
+                br_= document.createElement("br");
+          mian.appendChild(div1);
+                main_div.insertBefore(br_,main_div.getElementsByTagName("div")[0]);
+                //main_div.appendChild(mian);
+        main_div.insertBefore(mian,main_div.getElementsByTagName("br")[0]);
+
+
+
+
+          
+            },
+            'type':"post",
+            'datatype':'josn',
+
+        });
+ }
+
+function add_comment(wic){
+    message_id= wic.parentNode.parentNode.parentNode.parentNode.id;
+    grand_pa=wic.parentNode.parentNode.parentNode;
+    special_id= message_id +"_enter";
+     $.ajax({
+            'url':"/",
+            'data':{"type":"add_comment","message_id":message_id,"message":$("#"+special_id+"").val()},
+            'success':function(data){
+                txt = document.createTextNode(data.add_comment);
+                para1 = document.createElement("p");
+                 para1.setAttribute("class","comment_text");
+                para1.appendChild(txt);
+                all_div = grand_pa.getElementsByTagName("div");
+                if ($(all_div[0].getElementsByTagName("p")[0]).text()=="暂无评论"){
+                  all_div[0].removeChild(all_div[0].getElementsByTagName("p")[0]);
+                } 
+                all_div[0].appendChild(para1);
+
+                
+            },
+            'type':"post",
+            'datatype':'josn',
+
+        });
+
+}
+
+
+</script>
+
+
+
+  <body>
+  <script>
+    function change_(wic){
+      parent_ = wic.parentNode;
+      all_li = document.getElementById("nav").getElementsByTagName("ul")[0].getElementsByTagName("li");
+      for(i = 0 ; all_li[i] ; i++){
+        all_li[i].setAttribute("class","_active");
+      }      
+      parent_.setAttribute("class","active");
+
+    }
+  </script>
+    <!--標簽選擇器-->
+    <div id="nav" class="closed" aria-hidden="false" style="transition: max-height 400ms; position: relative;">
+      <ul >
+        <li class="active"><a onclick="change_(this)">Wall</a></li>
+        <li ><a onclick="change_(this)">Home</a></li>
+        <li><a onclick="change_(this)">Attention</a></li>
+        <li><a onclick="change_(this)">Prefer</a></li>
+      </ul>
+    </div>
+    <!---->
+
+    <!--主窗口-->
+<div>
+    <div role="main" class="main" id="mainbox" >
+  
+      
+      
+        <div id="window">
+           <span class="icon-mid"><span class="icon-angle-up" id="hover_" onclick="Send_show()"></span></span>
+           
+              <div id="enter_">
+
+                     <span class="icon-mid"><span class="icon-angle-down" onclick="Send_down()"></span></span>
+              <span class="icon-eye-open"></span>
+
+                  
+                    <textarea  name="enter_"  id="input_text" ></textarea>
+              
+              
+                <input type="submit" class="button button-glow button-border button-rounded button-primary"  value="Send" id="input_submit"
+                onclick="Send_message();return false">
+        
+                  
+            </div>
+
+       </div>
+
+    </div>
+</div>
+  <!--动态头栏-->
+    <header id="header" style="display:block ">
+         
+              <p id="p2">用户信息</p>
+              <span class="icon-mid"><span class="icon-user"></span></span>
+       
+        
+         
+              <p id="p4">修改密码</p>
+              <span class="icon-mid"><span class="icon-pushpin"></span></span>
+         
+   
+          
+              <p id="p3"><a href="http://FeeTime.cc" >安全退出</a></p>
+              <span class="icon-mid"><span class="icon-off"></span></span>
+         
+    </header>
+    <!---->
+
+<script>
+   function Send_show(){
+    Send_ = document.getElementById("enter_");
+    Send_.setAttribute("style","display:block");
+    icon_=document.getElementById("hover_");
+    icon_.setAttribute("style","display:none");
+   }
+   function Send_down(){
+    Send_ =document.getElementById("enter_");
+    Send_.setAttribute("style","display:none");
+    icon_=document.getElementById("hover_");
+    icon_.setAttribute("style","display:block");
+
+   }
+</script>
+
+<script>
+<!--动态头栏-->
+    var elem=document.querySelector("header");
+    var headroom = new Headroom(elem, {
+        "tolerance": 1,
+        "offset": 20,
+        "classes": {
+            "initial": "headroom",
+            "pinned": "headroom--pinned",
+            "unpinned": "headroom--unpinned"
+        }
+    });
+    headroom.init();  
+</script>
+
+<script>
+   $(document).ready(function(){  
+        var range = 0;             //距下边界长度/单位px  
+
+        var elemt = 0;           //插入元素高度/单位px  
+        var maxnum = 2000;            //设置加载最多次数  
+  
+        var totalheight = 0;  
+        var main = $(".main");                     //主体元素  
+        $(window).scroll(function(){  
+            var srollPos = $(window).scrollTop();    //滚动条距顶部距离(页面超出窗口的高度)  
+  
+            console.log("滚动条到顶部的垂直高度: "+$(document).scrollTop());  
+            console.log("页面的文档高度 ："+$(document).height());  
+            console.log('浏览器的高度：'+$(window).height());  
+  
+            totalheight = parseFloat($(window).height()) + parseFloat(srollPos);  
+            if(($(document).height()-range) / totalheight>=0.95 ) {  
+      //异步加载     
+         $.ajax({
+            'url':"/",
+            'data':{"type":"more"},
+            'success':function(data){
+
+               
+                for(id in data){
+                  message_id = id;
+                  message = data[id];
+
+                   main_div =document.getElementById("mainbox");
+
+                div1=document.createElement("div");
+                div1.setAttribute("class",'continer');
+
+                mian = document.createElement("div");
+                mian.setAttribute("class","message");
+                mian.setAttribute("id",message_id);
+
+                txt = document.createTextNode(message);
+        para1 = document.createElement("p");
+        para1.appendChild(txt);
+                div1.appendChild(para1);
+                 br_ =document.createElement("br");
+                 br__ =document.createElement("br");
+                div1.appendChild(br_);
+                 div1.appendChild(br__);
+
+        
+        div2 = document.createElement("div");
+                div2.setAttribute("class","message_add");
+
+                  div3 = document.createElement("div");
+                  div3.setAttribute("class","heart");
+                  div3.setAttribute("onclick","not_empty(this)");
+                    span_ = document.createElement("span");
+                    span_.setAttribute("class","icon-heart-empty");
+                    span_1 = document.createElement("span");
+                    span_1.setAttribute("class","icon-heart");
+                  div3.appendChild(span_);
+                  div3.appendChild(span_1);
+                  span_2 = document.createElement("span");
+                  span_2.setAttribute("class","icon-thumbs-up");
+                  span_3 = document.createElement("span");
+                  span_3.setAttribute("class","icon-envelope");
+                  span_3.setAttribute("onclick","show_detail(this)");
+                  span_3.setAttribute("status","off");
+                div2.appendChild(div3);
+                div2.appendChild(span_2);
+                div2.appendChild(span_3);
+                txt1=document.createTextNode("-------------------------------------------------------------------------");
+                para2=document.createElement("p");
+                para2.appendChild(txt1);
+
+                div1.appendChild(div2);
+                div1.appendChild(para2);
+                br_= document.createElement("br");
+          mian.appendChild(div1);
+                //main_div.appendChild(mian);
+                max= main_div.getElementsByTagName("div").length;
+                max_=main_div.getElementsByTagName("br").length;
+                //alert( main_div.getElementsByTagName("div")[max-6].getAttribute("id"));
+            if(id > main_div.getElementsByTagName("div")[max-6].getAttribute("id") ){
+
+              main_div.insertBefore(mian,main_div.getElementsByTagName("div")[max-6]);
+              main_div.insertBefore(br_,main_div.getElementsByTagName("div")[max-6]);
+            }
+            else 
+              main_div.insertBefore(mian,main_div.getElementsByTagName("div")[max-2]);
+              main_div.insertBefore(br_,main_div.getElementsByTagName("div")[max-2]);
+
+                }
+
+
+               
+                
+            },
+            'type':"post",
+            'datatype':'josn',
+
+        }); 
+
+       //异步加载       
+
+
+
+
+            }  
+        });  
+    });  
+</script>
+</html>

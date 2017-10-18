@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Log in_FeeTime</title>
+    
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="js/jquery-easyui/themes/default/easyui.css" type="text/css">
+    <link rel="stylesheet" href="js/jquery-easyui/themes/icon.css" type="text/css">
+    <script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src ='js/jq_mydialog.js'></script>
+    <link type="text/css" rel="stylesheet" href="css/my_dialog.css"/>
+
+    
+    
+    <style type="text/css">
+		body
+		{
+			font: normal 14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+		}
+		div
+		{
+			display:block;
+		}
+		a
+		{
+			text-decoration:none;
+			opacity: 1;
+			color: #fff;
+		 }
+		 input,button{ outline:none; }
+		::-moz-focus-inner{border:0px;}   /*去除按钮点击时<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Log in|Blog</title>
+    
+    <script type="text/javascript" src="js/jquery-1.8.0.min.js"></script>
+    <script src="js/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/easyui-lang-zh_CN.js"></script>
+    <link rel="stylesheet" href="js/jquery-easyui/themes/default/easyui.css" type="text/css"></link>
+    <link rel="stylesheet" href="js/jquery-easyui/themes/icon.css" type="text/css"></link>
+
+    
+    
+    <style type="text/css">
+		body
+		{
+			font: normal 14px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+		}
+		div
+		{
+			display:block;
+		}
+		a
+		{
+			text-decoration:none;
+			opacity: 1;
+			color: #fff;
+		 }
+		 input,button{ outline:none; }
+		::-moz-focus-inner{border:0px;}   /*去除按钮点击时出现的虚线边框*/
+        .login_bg
+        {
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-image:url(images/bg_1.jpg);
+			background-size: cover;
+        }
+		.login_header {
+			position:absolute;
+			top:0;
+			left:0;
+			right:0;
+			}
+		.container {
+			position:relative;
+			top:50%;
+			margin: 0 auto;
+			width: 260px;
+			}
+		#logo
+		{
+			display: block;
+			text-align: center;
+			font-weight: bold;
+			font-size: 50px;
+			color: white;
+			height: 100%;
+		}
+		#subheading 
+		{
+		  position: relative;
+		  width: 517px;
+		  left: 50%;
+		  margin: 10px 0 16px -258px;
+		  font-size: 15px;
+		  font-weight: normal;
+		  color: #fff;
+		  text-align: center;
+		}
+		.signup_forms
+		{
+			width:260px;
+			height:145px;	
+		}
+		.signup_forms_container
+		{
+			width:260px;
+			
+			overflow: hidden;
+			background: #fff;
+			border-radius:3px;	
+		}
+		.form_user,.form_password
+		{
+			width:260px;
+			height:45px;
+			margin:0px;
+        	padding:0px;
+			border:0px;	
+		}
+		.form_password{border-top: 1px solid #e3e3e3;}
+		.signup_forms input
+		{
+			padding: 11px 10px 11px 13px;
+			width: 100%;
+			margin:0px;
+        	background: 0;
+			font: 16px/1.4 "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;
+			border:0px;	
+		}
+		#signup_forms_submit{
+		  margin-top:8px;		
+		  width:260px;
+		  height:45px;
+		  background:#529ECC;
+		  color:#fff;
+		  border:0px;
+		  border-radius:3px;
+		  cursor:pointer;       <!--CSS属性设置鼠标为手型--> 
+		 }
+		 #signup_forms_submit span
+		 {
+			 color: #fff;
+			 font: "Helvetica Neue",Arial,Helvetica,sans-serif;
+			 font-size:16px;
+		}
+		.footer
+		 {
+			position: fixed;
+			top: auto;
+			right: 0;
+			bottom: 0;
+			left: 0;
+		 }
+		 .footer_signup_link
+		 {
+			 position: absolute;
+			 width:141px;
+			 height:78px;
+			 bottom: 0;
+			 padding: 0 20px;
+			 margin: 0 0 13px 0;
+			 line-height: 25px;
+			 text-align: center;
+			 opacity: 1;
+			 color: #fff;
+		 }
+		 .signup_link
+		 {
+			  display: block;
+			  height: 45px;
+			  padding: 0 10px;
+			  margin: 0 0 8px 0;
+			  font-size: 16px;
+			  font-weight: bold;
+			  line-height: 45px;
+			  border: 0;
+			  border-radius: 2px;
+			  color: #fff;
+              background: rgba(255,255,255,0.33);
+		}
+		.link
+		{
+			font-size: 14px;
+			padding-right: 5px;
+			margin-right: 12px;
+			color: #fff;
+		}
+		.design_show
+		{
+			position: fixed;
+			bottom: 0;
+			right: 0;
+			padding: 0 12px;
+			margin: 0 0 13px 0;
+			line-height: 25px;
+		}
+		.designer_info
+		{
+			position: relative;
+			color: #FFFFFF;
+		}
+		#face
+		{
+			margin: 0 0 0 10px;
+			vertical-align: middle;
+			border-radius:20px;
+			padding: 0;
+			height: 24px;
+			width: 24px;
+		}
+    </style>
+<script type="text/javascript">
+$(function (){
+		var urlinfo=window.location.href; //获取当前页面的url
+			var len=urlinfo.length;//获取url的长度
+			var offset=urlinfo.indexOf("?");//设置参数字符串开始的位置
+			var newsidinfo=urlinfo.substr(offset+1,len)//取出参数字符串 这里会获得类似“id=1”这样的字符串
+			var newsids=newsidinfo.split("=");//对获得的参数字符串按照“=”进行分割
+			var newsid=newsids[1];//得到参数值
+			var newsname=newsids[0];//得到参数名字
+ 			if (newsname=='error'){
+		$.myalert({
+			content:'你可能输了假密码',
+			confirm_btn_click: function (e){	//确认按钮点击事件
+				$.myalert("getDialog").mydialog("hide");
+			}
+		});
+	};
+});
+</script>
+    
+
+
+
+	
+</head>
+<body>
+    <div id="login_bg" class ="login_bg" style="background-image:url(images/u1.jpg);"></div>
+    <div class="login_header">
+    	<span></span>
+    </div>
+    
+    <div class="container">
+    	<div class="form_header">
+        	<h1 id="logo">Feetime</h1>
+			<h2 id="subheading">To explore and discover</h2>
+        </div>
+        <div class="signup_forms" class="signup_forms">
+            	<div id="signup_forms_container" class="signup_forms_container">
+                    	<form class="signup_form_form" id="sign_form" method="post" action="checklogin">
+                        	<div class="signup_account" id="signup_account">
+                            	<div class="form_user">	
+        							<input type="text" name="email" placeholder="Username" id="signup_email" required="required">
+                                </div>
+                                <div class="form_password">
+           							<input type="password" name="password" placeholder="Password" id="signup_password" required="required">
+        						</div>
+                            </div>
+                            <div >
+               					<input type="submit" id='signup_forms_submit' value="Login">
+            				</div>
+                        </form> 
+                  		   
+    			</div>
+    	</div>
+    <div class="footer">
+    	<div class="footer_signup_link">
+        	<a class="signup_link" href="register1.html">Sign up</a>
+            <a href="https://www.baidu.com" target="_blank" class="link unnamed_1">Patent</a>
+            <a href="#" target="_blank" class="link unnamed_2">About</a>
+        </div>
+    </div>
+</body>
+</html>
